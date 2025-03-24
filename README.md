@@ -1,8 +1,8 @@
-# Nombre de la aplicación
+# AppMergencyBta
 
 Reemplace este texto con una descripción de su aplicación.
 
-Author: Nombre del estudiante
+Author: Johan Lopez y Jovanny Gutierrez
 
 ## Referencias
 
