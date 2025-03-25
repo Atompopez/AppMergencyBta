@@ -59,4 +59,7 @@ RF6. PRESENTAR EVALUACIÓN
 RESUMEN	El usuario podrá realizar evaluaciones que le permitirán evidenciar el resultado de su aprendizaje
 ENTRADAS	Formularios de evaluación
 RESULTADO	El estudiante presentará evaluaciones que le darán un puntaje aprobatorio conforme va avanzando en el estudio de cada uno de los módulos
+
+
+
 ![image](https://github.com/user-attachments/assets/b28c7f82-4955-4e0f-957b-a05457af0488)
