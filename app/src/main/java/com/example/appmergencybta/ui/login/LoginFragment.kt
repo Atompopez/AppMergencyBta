@@ -19,8 +19,9 @@ import com.example.appmergencybta.databinding.FragmentLoginBinding
 import android.content.Intent
 import android.util.Log
 import com.example.appmergencybta.MainActivity
-
+import androidx.navigation.fragment.findNavController
 import com.example.appmergencybta.R
+import androidx.navigation.fragment.findNavController
 
 class LoginFragment : Fragment() {
 
@@ -156,10 +157,10 @@ private var _binding: FragmentLoginBinding? = null
            apply()
        }
 
-       val intent = Intent(requireContext(), MainActivity::class.java)
-       startActivity(intent)
-       requireActivity().finish()
+       findNavController().navigate(R.id.inicioFragment)
    }
+
+
     private fun showLoginFailed(@StringRes errorString: Int) {
         val appContext = context?.applicationContext ?: return
         Toast.makeText(appContext, errorString, Toast.LENGTH_LONG).show()

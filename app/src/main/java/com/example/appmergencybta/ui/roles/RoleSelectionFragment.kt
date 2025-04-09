@@ -25,16 +25,19 @@ class RoleSelectionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // ⚠️ Solo para pruebas, para evitar que LoginFragment se redireccione automáticamente
+        val sharedPref = requireActivity().getSharedPreferences("app_prefs", android.content.Context.MODE_PRIVATE)
+        sharedPref.edit().putBoolean("isLoggedIn", false).apply()
+
         binding.btnAgente.setOnClickListener {
             findNavController().navigate(R.id.action_roleSelectionFragment_to_loginFragment)
-
         }
 
         binding.btnSupervisor.setOnClickListener {
             findNavController().navigate(R.id.action_roleSelectionFragment_to_loginFragment)
-
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
