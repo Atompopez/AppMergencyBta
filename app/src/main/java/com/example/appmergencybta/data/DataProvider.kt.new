@@ -1,0 +1,20 @@
+package com.example.appmergencybta.data
+
+import com.example.appmergencybta.data.database.entities.TypificationCode
+
+/**
+ * Proveedor de datos para la aplicación
+ * Contiene los datos iniciales para la base de datos
+ */
+object DataProvider {
+    
+    /**
+     * Obtiene la lista de códigos de tipificación para inicializar la base de datos
+     * Basado en la guía de tipificación oficial
+     */
+    fun getTypificationCodes(): List<TypificationCode> {
+        return listOf(
+            // Códigos serán agregados aquí
+        )
+    }
+}

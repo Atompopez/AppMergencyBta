@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Círculo exterior -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z"/>
+    
+    <!-- Círculo interior -->
+    <path
+        android:fillColor="@color/primary_blue"
+        android:pathData="M12,4C7.58,4 4,7.58 4,12s3.58,8 8,8 8,-3.58 8,-8S16.42,4 12,4z"/>
+    
+    <!-- Tarjeta volteando -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,7.5v9c0,0 0,0 0,0C9.5,16.5 8,14.5 8,12s1.5,-4.5 4,-4.5C12,7.5 12,7.5 12,7.5z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,7.5v9c0,0 0,0 0,0c2.5,0 4,-2 4,-4.5s-1.5,-4.5 -4,-4.5C12,7.5 12,7.5 12,7.5z" android:alpha="0.5"/>
+    
+    <!-- Flecha de rotación -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16.5,8.5l1.5,-1.5v3h-3l1.5,-1.5z"/>
+</vector>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Colores originales (mantener para compatibilidad) -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,32 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Nuevos colores basados en la imagen de referencia -->
+    <color name="primary_blue">#1E88E5</color> <!-- Azul principal -->
+    <color name="primary_dark_blue">#0D47A1</color> <!-- Azul oscuro para barras de estado -->
+    <color name="background_blue">#2979FF</color> <!-- Azul de fondo -->
+    <color name="card_blue">#42A5F5</color> <!-- Azul para tarjetas -->
+    <color name="accent_blue">#29B6F6</color> <!-- Azul más claro para acentos -->
+    <color name="text_white">#FFFFFF</color> <!-- Blanco para texto -->
+    <color name="text_light">#E3F2FD</color> <!-- Azul muy claro para textos secundarios -->
+    <color name="card_green">#66BB6A</color> <!-- Verde para tarjetas secundarias -->
+    
+    <!-- Colores para selección -->
+    <color name="selected_option">#64B5F6</color> <!-- Azul claro para opciones seleccionadas -->
+    <color name="selected_option_border">#2962FF</color> <!-- Azul intenso para borde de opciones seleccionadas -->
+    <color name="unselected_option">#E3F2FD</color> <!-- Azul muy claro para opciones no seleccionadas -->
+    <color name="correct_option">#66BB6A</color> <!-- Verde para opciones correctas -->
+    <color name="incorrect_option">#EF5350</color> <!-- Rojo para opciones incorrectas -->
+    
+    <!-- Colores para las flashcards según categoría -->
+    <color name="flashcard_security">#FFC107</color> <!-- Amarillo - Seguridad -->
+    <color name="flashcard_medical">#F44336</color> <!-- Rojo - Médico -->
+    <color name="flashcard_disaster">#FF9800</color> <!-- Naranja - Desastres -->
+    <color name="flashcard_traffic">#4CAF50</color> <!-- Verde - Tráfico -->
+    <color name="flashcard_environment">#8BC34A</color> <!-- Verde claro - Medio ambiente -->
+    <color name="flashcard_public_services">#2196F3</color> <!-- Azul - Servicios públicos -->
+    <color name="flashcard_social">#9C27B0</color> <!-- Morado - Social -->
+    <color name="flashcard_infrastructure">#795548</color> <!-- Marrón - Infraestructura -->
+    <color name="flashcard_other">#607D8B</color> <!-- Gris azulado - Otros -->
 </resources>

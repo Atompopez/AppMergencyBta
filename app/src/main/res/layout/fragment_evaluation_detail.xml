@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@color/background_blue"
     tools:context=".ui.evaluationdetail.EvaluationDetailFragment">
 
     <!-- Layout para la evaluación -->
@@ -18,8 +19,9 @@
             android:id="@+id/tvEvaluationTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
+            android:textColor="@color/text_white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +40,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@android:drawable/ic_menu_recent_history"
+                android:src="@drawable/ic_timer"
                 android:contentDescription="Temporizador" />
 
             <TextView
@@ -47,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#FF0000"
+                android:textColor="@color/text_light"
                 android:layout_marginStart="4dp"
                 tools:text="15:00" />
         </LinearLayout>
@@ -57,7 +59,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="@color/text_white"
+            android:textStyle="bold"
             android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@id/timerLayout"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +71,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/card_blue"
             app:layout_constraintTop_toBottomOf="@id/tvQuestionNumber"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -84,6 +88,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
+                    android:textColor="@color/text_white"
+                    android:textStyle="bold"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -116,38 +122,77 @@
                         android:id="@+id/radioOption1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@null"
+                        android:elevation="2dp"
+                        android:padding="16dp"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        android:textColor="@drawable/radio_text_color_selector"
+                        android:textAlignment="center"
                         tools:text="911" />
 
                     <RadioButton
                         android:id="@+id/radioOption2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@null"
+                        android:elevation="2dp"
+                        android:padding="16dp"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        android:textColor="@drawable/radio_text_color_selector"
+                        android:textAlignment="center"
                         tools:text="602" />
 
                     <RadioButton
                         android:id="@+id/radioOption3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@null"
+                        android:elevation="2dp"
+                        android:padding="16dp"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        android:textColor="@drawable/radio_text_color_selector"
+                        android:textAlignment="center"
                         tools:text="302" />
 
                     <RadioButton
                         android:id="@+id/radioOption4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@null"
+                        android:elevation="2dp"
+                        android:padding="16dp"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        android:textColor="@drawable/radio_text_color_selector"
+                        android:textAlignment="center"
                         tools:text="101" />
                 </RadioGroup>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNext"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Siguiente"
+            android:textColor="@color/text_white"
+            android:textStyle="bold"
+            android:backgroundTint="@color/primary_blue"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:layout_marginTop="16dp"
+            app:cornerRadius="24dp"
+            app:elevation="4dp"
             app:layout_constraintTop_toBottomOf="@id/cardQuestion"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -168,53 +213,85 @@
             android:text="Resultado de la Evaluación"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/text_white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:id="@+id/tvResult"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardResult"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/card_blue"
             app:layout_constraintTop_toBottomOf="@id/tvResultTitle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="¡Aprobado!" />
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:id="@+id/tvScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="48sp"
-            android:textStyle="bold"
-            android:textColor="@color/design_default_color_primary"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/tvResult"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="85%" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="24dp">
 
-        <TextView
-            android:id="@+id/tvCorrectAnswers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/tvScore"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="8 de 10 respuestas correctas" />
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="¡Aprobado!" />
 
-        <Button
+                <TextView
+                    android:id="@+id/tvScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_light"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvResult"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="85%" />
+
+                <TextView
+                    android:id="@+id/tvCorrectAnswers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/text_white"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvScore"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="8 de 10 respuestas correctas" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFinish"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Finalizar"
+            android:textColor="@color/text_white"
+            android:textStyle="bold"
+            android:backgroundTint="@color/primary_blue"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@id/tvCorrectAnswers"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:cornerRadius="24dp"
+            app:elevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/cardResult"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

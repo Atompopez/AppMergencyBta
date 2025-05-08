@@ -3,10 +3,18 @@
     android:height="24dp"
     android:viewportWidth="24.0"
     android:viewportHeight="24.0">
+    <!-- Círculo exterior -->
     <path
-        android:fillColor="#FF000000"
-        android:pathData="M12,12m-3.2,0a3.2,3.2 0,1 1,6.4 0a3.2,3.2 0,1 1,-6.4 0" />
+        android:fillColor="#E0E0E0"
+        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z"/>
+    
+    <!-- Círculo interior -->
     <path
-        android:fillColor="#FF000000"
-        android:pathData="M9,2L7.17,4H4c-1.1,0 -2,0.9 -2,2v12c0,1.1 0.9,2 2,2h16c1.1,0 2,-0.9 2,-2V6c0,-1.1 -0.9,-2 -2,-2h-3.17L15,2H9zm3,15c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5z" />
+        android:fillColor="@color/primary_blue"
+        android:pathData="M12,4C7.58,4 4,7.58 4,12s3.58,8 8,8 8,-3.58 8,-8S16.42,4 12,4z"/>
+    
+    <!-- Cámara -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,14.5c-1.38,0 -2.5,-1.12 -2.5,-2.5s1.12,-2.5 2.5,-2.5 2.5,1.12 2.5,2.5 -1.12,2.5 -2.5,2.5zM9,8L7.5,9.5H6c-0.55,0 -1,0.45 -1,1v5c0,0.55 0.45,1 1,1h12c0.55,0 1,-0.45 1,-1v-5c0,-0.55 -0.45,-1 -1,-1h-1.5L15,8H9z" />
 </vector>
