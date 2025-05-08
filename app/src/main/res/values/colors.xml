@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Colores para las flashcards según categoría -->
+    <color name="flashcard_security">#FFC107</color> <!-- Amarillo - Seguridad -->
+    <color name="flashcard_medical">#F44336</color> <!-- Rojo - Médico -->
+    <color name="flashcard_disaster">#FF9800</color> <!-- Naranja - Desastres -->
+    <color name="flashcard_traffic">#4CAF50</color> <!-- Verde - Tráfico -->
+    <color name="flashcard_environment">#8BC34A</color> <!-- Verde claro - Medio ambiente -->
+    <color name="flashcard_public_services">#2196F3</color> <!-- Azul - Servicios públicos -->
+    <color name="flashcard_social">#9C27B0</color> <!-- Morado - Social -->
+    <color name="flashcard_infrastructure">#795548</color> <!-- Marrón - Infraestructura -->
+    <color name="flashcard_other">#607D8B</color> <!-- Gris azulado - Otros -->
 </resources>

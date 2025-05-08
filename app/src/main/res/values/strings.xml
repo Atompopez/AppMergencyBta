@@ -16,6 +16,39 @@
     <string name="invalid_password">Contraseña inválida</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
+    
+    <!-- Strings para la funcionalidad de aprendizaje de códigos -->
+    <string name="typification_codes">Códigos de Tipificación</string>
+    <string name="typification_practice">Práctica de Códigos</string>
+    <string name="typification_memorize">Memorizar Códigos</string>
+    <string name="code_number">Código: %1$s</string>
+    <string name="code_acronym">Acrónimo: %1$s</string>
+    <string name="code_description">Descripción: %1$s</string>
+    <string name="select_acronym">Selecciona el acrónimo correcto</string>
+    <string name="select_description">Selecciona la descripción correcta</string>
+    <string name="select_code">Selecciona el código correcto</string>
+    <string name="correct_answer">¡Correcto!</string>
+    <string name="wrong_answer">Incorrecto. Inténtalo de nuevo.</string>
+    <string name="next_question">Siguiente</string>
+    <string name="finish_practice">Finalizar</string>
+    <string name="practice_summary">Resumen de la práctica</string>
+    <string name="correct_answers">Respuestas correctas: %1$d</string>
+    <string name="wrong_answers">Respuestas incorrectas: %1$d</string>
+    <string name="practice_again">Practicar de nuevo</string>
+    <string name="back_to_menu">Volver al menú</string>
+    <string name="loading_codes">Cargando códigos...</string>
+    <string name="no_codes_available">No hay códigos disponibles</string>
+    <string name="practice_progress">Progreso: %1$d/%2$d</string>
+    <string name="code_questions">Preguntas: %1$s</string>
+    <string name="code_modifying_circumstances">Circunstancias modificadoras: %1$s</string>
+    <string name="code_voice_transfer">Transferencia de voz: %1$s</string>
+    <string name="code_incident_copy">Copia de incidente: %1$s</string>
+    
+    <!-- Strings para el módulo de memorización con flashcards -->
+    <string name="flashcard_learning">Memorización de Códigos</string>
+    <string name="flashcard_search_hint">Buscar código o acrónimo</string>
+    <string name="flashcard_flip">Voltear tarjetas</string>
+    <string name="flashcard_switch_to_practice">Cambiar a modo práctica</string>
+    <string name="flashcard_no_results">No se encontraron resultados</string>
+    <string name="flashcard_tap_to_flip">Toca para voltear</string>
 </resources>

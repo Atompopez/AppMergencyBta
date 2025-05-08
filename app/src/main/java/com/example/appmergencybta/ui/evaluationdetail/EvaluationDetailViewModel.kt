@@ -15,8 +15,8 @@ class EvaluationDetailViewModel(
     private val userRepository: UserRepository
 ) : ViewModel() {
 
-    private val _evaluation = MutableLiveData<Evaluation>()
-    val evaluation: LiveData<Evaluation> = _evaluation
+    private val _evaluation = MutableLiveData<Evaluation?>(null)
+    val evaluation: LiveData<Evaluation?> = _evaluation
 
     /**
      * Carga una evaluación específica por su ID y el ID del módulo al que pertenece

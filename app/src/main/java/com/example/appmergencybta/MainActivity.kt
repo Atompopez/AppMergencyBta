@@ -1,22 +1,28 @@
 package com.example.appmergencybta
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
 import com.example.appmergencybta.databinding.ActivityMainBinding
+import com.example.appmergencybta.ui.typification.TypificationViewModel
+import com.google.android.material.navigation.NavigationView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private var mediaPlayerOpening: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,24 +31,43 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
+        
+        // Reproducir sonido de apertura
+        playOpeningSound()
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setAnchorView(R.id.fab).show()
-        }
+        // Inicializar la base de datos en segundo plano
+        initializeDatabase()
+
+        // Ocultar el FAB ya que no lo usamos en esta aplicación
+        binding.appBarMain.fab.hide()
+        
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        
+        // Configurar los destinos de nivel superior
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.inicioFragment, R.id.modulesFragment, R.id.typificationCodesFragment,
+                R.id.progressFragment, R.id.usersFragment
             ), drawerLayout
         )
+        
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+    
+    /**
+     * Inicializa la base de datos en segundo plano
+     */
+    private fun initializeDatabase() {
+        // Inicializar el ViewModel para que se carguen los datos
+        val viewModel = ViewModelProvider(this).get(TypificationViewModel::class.java)
+        
+        // También podemos inicializar la base de datos directamente si es necesario
+        CoroutineScope(Dispatchers.IO).launch {
+            viewModel.loadCodes()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -54,5 +79,28 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+    
+    /**
+     * Reproduce el sonido de apertura de la aplicación
+     */
+    private fun playOpeningSound() {
+        try {
+            mediaPlayerOpening = MediaPlayer.create(this, R.raw.opening)
+            mediaPlayerOpening?.setOnCompletionListener { mp ->
+                mp.release()
+                mediaPlayerOpening = null
+            }
+            mediaPlayerOpening?.start()
+        } catch (e: Exception) {
+            // Manejar la excepción silenciosamente
+        }
+    }
+    
+    override fun onDestroy() {
+        super.onDestroy()
+        // Liberar recursos de MediaPlayer
+        mediaPlayerOpening?.release()
+        mediaPlayerOpening = null
     }
 }

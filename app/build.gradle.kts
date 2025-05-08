@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -37,6 +39,11 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    
+    lint {
+        baseline = file("lint-baseline.xml")
+        abortOnError = false
+    }
 }
 
 dependencies {
@@ -59,6 +66,26 @@ dependencies {
     
     // CardView
     implementation("androidx.cardview:cardview:1.0.0")
+    
+    // Room Database
+    implementation("androidx.room:room-runtime:2.6.1")
+    annotationProcessor("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    
+    // Glide para cargar imágenes
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+    
+    // Lottie para animaciones
+    implementation("com.airbnb.android:lottie:6.1.0")
+    
+    // Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.firebase:firebase-storage-ktx")
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

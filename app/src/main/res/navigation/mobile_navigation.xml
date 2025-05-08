@@ -72,6 +72,9 @@
         <action
             android:id="@+id/action_inicioFragment_to_usersFragment"
             app:destination="@id/usersFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_typificationCodesFragment"
+            app:destination="@id/typificationCodesFragment" />
     </fragment>
 
     <fragment
@@ -150,4 +153,67 @@
         android:name="com.example.appmergencybta.ui.users.UsersFragment"
         android:label="Gestión de Usuarios"
         tools:layout="@layout/fragment_users" />
+        
+    <!-- Fragmentos para la funcionalidad de códigos de tipificación -->
+    <fragment
+        android:id="@+id/typificationCodesFragment"
+        android:name="com.example.appmergencybta.ui.typification.TypificationCodesFragment"
+        android:label="Códigos de Tipificación"
+        tools:layout="@layout/fragment_typification_codes">
+        <action
+            android:id="@+id/action_typificationCodesFragment_to_codeDetailFragment"
+            app:destination="@id/codeDetailFragment" />
+        <action
+            android:id="@+id/action_typificationCodesFragment_to_codePracticeFragment"
+            app:destination="@id/codePracticeFragment" />
+        <action
+            android:id="@+id/action_typificationCodesFragment_to_flashcardLearningFragment"
+            app:destination="@id/flashcardLearningFragment" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/codeDetailFragment"
+        android:name="com.example.appmergencybta.ui.typification.CodeDetailFragment"
+        android:label="Detalle del Código"
+        tools:layout="@layout/fragment_code_detail">
+        <action
+            android:id="@+id/action_codeDetailFragment_to_codePracticeFragment"
+            app:destination="@id/codePracticeFragment" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/codePracticeFragment"
+        android:name="com.example.appmergencybta.ui.typification.CodePracticeFragment"
+        android:label="Práctica de Códigos"
+        tools:layout="@layout/fragment_code_practice">
+        <action
+            android:id="@+id/action_codePracticeFragment_to_practiceSummaryFragment"
+            app:destination="@id/practiceSummaryFragment" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/practiceSummaryFragment"
+        android:name="com.example.appmergencybta.ui.typification.PracticeSummaryFragment"
+        android:label="Resumen de Práctica"
+        tools:layout="@layout/fragment_practice_summary">
+        <action
+            android:id="@+id/action_practiceSummaryFragment_to_codePracticeFragment"
+            app:destination="@id/codePracticeFragment" />
+        <action
+            android:id="@+id/action_practiceSummaryFragment_to_typificationCodesFragment"
+            app:destination="@id/typificationCodesFragment" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/flashcardLearningFragment"
+        android:name="com.example.appmergencybta.ui.typification.FlashcardLearningFragment"
+        android:label="Memorización de Códigos"
+        tools:layout="@layout/fragment_flashcard_learning">
+        <action
+            android:id="@+id/action_flashcardLearningFragment_to_codePracticeFragment"
+            app:destination="@id/codePracticeFragment" />
+        <action
+            android:id="@+id/action_flashcardLearningFragment_to_typificationCodesFragment"
+            app:destination="@id/typificationCodesFragment" />
+    </fragment>
 </navigation>
