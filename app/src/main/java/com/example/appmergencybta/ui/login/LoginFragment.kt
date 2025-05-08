@@ -21,6 +21,8 @@ import android.util.Log
 import com.example.appmergencybta.MainActivity
 import androidx.navigation.fragment.findNavController
 import com.example.appmergencybta.R
+import androidx.activity.OnBackPressedCallback
+
 import androidx.navigation.fragment.findNavController
 
 class LoginFragment : Fragment() {
@@ -64,6 +66,15 @@ private var _binding: FragmentLoginBinding? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        /*requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    // No hacemos nada al presionar "Atrás"
+                }
+            }
+        )
+*/
+
         val sharedPref = requireActivity().getSharedPreferences("app_prefs", android.content.Context.MODE_PRIVATE)
         val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false)
         if (isLoggedIn) {
@@ -154,6 +165,7 @@ private var _binding: FragmentLoginBinding? = null
        val sharedPref = requireActivity().getSharedPreferences("app_prefs", android.content.Context.MODE_PRIVATE)
        with(sharedPref.edit()) {
            putBoolean("isLoggedIn", true)
+           putString("user_name", model.displayName)
            apply()
        }
 

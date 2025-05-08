@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -26,15 +25,31 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.appmergencybta.ui.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        android:label="Iniciar Sesión"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.appmergencybta.ui.register.RegisterFragment"
+        android:label="Registro de Usuario"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/roleSelectionFragment"
         android:name="com.example.appmergencybta.ui.roles.RoleSelectionFragment"
         android:label="Seleccionar rol"
-        tools:layout="@layout/fragment_role_selection" >
-
+        tools:layout="@layout/fragment_role_selection">
         <action
             android:id="@+id/action_roleSelectionFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -44,7 +59,95 @@
         android:id="@+id/inicioFragment"
         android:name="com.example.appmergencybta.ui.inicio.InicioFragment"
         android:label="Inicio"
-        tools:layout="@layout/fragment_inicio" />
+        tools:layout="@layout/fragment_inicio">
+        <action
+            android:id="@+id/action_inicioFragment_to_roleSelectionFragment"
+            app:destination="@id/roleSelectionFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_modulesFragment"
+            app:destination="@id/modulesFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_progressFragment"
+            app:destination="@id/progressFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/modulesFragment"
+        android:name="com.example.appmergencybta.ui.modules.ModulesFragment"
+        android:label="Módulos de Formación"
+        tools:layout="@layout/fragment_modules">
+        <action
+            android:id="@+id/action_modulesFragment_to_moduleDetailFragment"
+            app:destination="@id/moduleDetailFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/moduleDetailFragment"
+        android:name="com.example.appmergencybta.ui.moduledetail.ModuleDetailFragment"
+        android:label="Detalle del Módulo"
+        tools:layout="@layout/fragment_module_detail">
+        <argument
+            android:name="moduleId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_moduleDetailFragment_to_lessonDetailFragment"
+            app:destination="@id/lessonDetailFragment" />
+        <action
+            android:id="@+id/action_moduleDetailFragment_to_evaluationsFragment"
+            app:destination="@id/evaluationsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lessonDetailFragment"
+        android:name="com.example.appmergencybta.ui.lessondetail.LessonDetailFragment"
+        android:label="Lección"
+        tools:layout="@layout/fragment_lesson_detail">
+        <argument
+            android:name="moduleId"
+            app:argType="string" />
+        <argument
+            android:name="lessonId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/evaluationsFragment"
+        android:name="com.example.appmergencybta.ui.evaluations.EvaluationsFragment"
+        android:label="Evaluaciones"
+        tools:layout="@layout/fragment_evaluations">
+        <argument
+            android:name="moduleId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_evaluationsFragment_to_evaluationDetailFragment"
+            app:destination="@id/evaluationDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/evaluationDetailFragment"
+        android:name="com.example.appmergencybta.ui.evaluationdetail.EvaluationDetailFragment"
+        android:label="Evaluación"
+        tools:layout="@layout/fragment_evaluation_detail">
+        <argument
+            android:name="moduleId"
+            app:argType="string" />
+        <argument
+            android:name="evaluationId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="com.example.appmergencybta.ui.progress.ProgressFragment"
+        android:label="Mi Progreso"
+        tools:layout="@layout/fragment_progress" />
+        
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.appmergencybta.ui.users.UsersFragment"
+        android:label="Gestión de Usuarios"
+        tools:layout="@layout/fragment_users" />
 </navigation>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.lessondetail.LessonDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvLessonTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Introducción a la Tipificación" />
+
+        <ImageView
+            android:id="@+id/imgLesson"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Imagen de la lección"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tvLessonTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible"
+            tools:src="@drawable/ic_menu_gallery" />
+
+        <FrameLayout
+            android:id="@+id/videoContainer"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:background="#DDDDDD"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/imgLesson"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Video de la lección"
+                android:textSize="18sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvLessonContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/videoContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="La tipificación de incidentes es el proceso mediante el cual se asigna un código específico a cada tipo de emergencia reportada. Esto permite categorizar y priorizar adecuadamente las llamadas recibidas en la línea 123, facilitando la asignación de recursos y la respuesta oportuna a las emergencias." />
+
+        <Button
+            android:id="@+id/btnMarkAsCompleted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Marcar como completada"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tvLessonContent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

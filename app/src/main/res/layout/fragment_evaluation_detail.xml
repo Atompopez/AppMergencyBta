@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.evaluationdetail.EvaluationDetailFragment">
+
+    <!-- Layout para la evaluación -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/evaluationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvEvaluationTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Evaluación Básica de Tipificación" />
+
+        <LinearLayout
+            android:id="@+id/timerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvEvaluationTitle"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_recent_history"
+                android:contentDescription="Temporizador" />
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:layout_marginStart="4dp"
+                tools:text="15:00" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvQuestionNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/design_default_color_primary"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/timerLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Pregunta 1/10" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardQuestion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvQuestionNumber"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvQuestionText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="¿Qué código se utiliza para un robo a persona sin arma?" />
+
+                <ImageView
+                    android:id="@+id/imgQuestion"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Imagen de la pregunta"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuestionText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:visibility="visible"
+                    tools:src="@drawable/ic_menu_gallery" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/imgQuestion"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/radioOption1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        tools:text="911" />
+
+                    <RadioButton
+                        android:id="@+id/radioOption2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        tools:text="602" />
+
+                    <RadioButton
+                        android:id="@+id/radioOption3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        tools:text="302" />
+
+                    <RadioButton
+                        android:id="@+id/radioOption4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="101" />
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Siguiente"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/cardQuestion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Layout para el resultado -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvResultTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resultado de la Evaluación"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/tvResultTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="¡Aprobado!" />
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_primary"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tvResult"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="85%" />
+
+        <TextView
+            android:id="@+id/tvCorrectAnswers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tvScore"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="8 de 10 respuestas correctas" />
+
+        <Button
+            android:id="@+id/btnFinish"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Finalizar"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/tvCorrectAnswers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
