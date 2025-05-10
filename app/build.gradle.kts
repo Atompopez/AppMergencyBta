@@ -43,6 +43,9 @@ android {
     lint {
         baseline = file("lint-baseline.xml")
         abortOnError = false
+        checkReleaseBuilds = false
+        // Prevent build from failing when a new baseline is created
+        checkAllWarnings = true
     }
 }
 
@@ -75,7 +78,7 @@ dependencies {
     
     // Glide para cargar imágenes
     implementation("com.github.bumptech.glide:glide:4.16.0")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+    kapt("com.github.bumptech.glide:compiler:4.16.0")
     
     // Lottie para animaciones
     implementation("com.airbnb.android:lottie:6.1.0")

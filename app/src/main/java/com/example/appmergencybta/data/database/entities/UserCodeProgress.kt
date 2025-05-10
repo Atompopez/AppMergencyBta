@@ -17,6 +17,9 @@ import androidx.room.ForeignKey
             childColumns = ["code_id"],
             onDelete = ForeignKey.CASCADE
         )
+    ],
+    indices = [
+        androidx.room.Index(value = ["code_id"]) // Add index for foreign key
     ]
 )
 data class UserCodeProgress(

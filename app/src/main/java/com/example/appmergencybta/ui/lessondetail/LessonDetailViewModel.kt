@@ -15,8 +15,8 @@ class LessonDetailViewModel(
     private val userRepository: UserRepository
 ) : ViewModel() {
 
-    private val _lesson = MutableLiveData<Lesson>()
-    val lesson: LiveData<Lesson> = _lesson
+    private val _lesson = MutableLiveData<Lesson?>()
+    val lesson: LiveData<Lesson?> = _lesson
 
     /**
      * Carga una lección específica por su ID y el ID del módulo al que pertenece
@@ -24,7 +24,7 @@ class LessonDetailViewModel(
     fun loadLesson(moduleId: String, lessonId: String) {
         val module = moduleRepository.getModuleById(moduleId)
         val selectedLesson = module?.lessons?.find { it.id == lessonId }
-        _lesson.value = selectedLesson
+        _lesson.value = selectedLesson // Now safe since _lesson accepts nullable values
     }
 
     /**
