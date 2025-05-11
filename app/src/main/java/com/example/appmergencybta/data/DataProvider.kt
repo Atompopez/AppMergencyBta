@@ -587,7 +587,7 @@ object DataProvider {
                 imageResource = "ic_verify"
             ),
             TypificationCode(
-                code = "935",
+                code = "000",
                 acronym = "SIMULACRO",
                 description = "Simulacro",
                 questions = "Solicitar entidad donde se va a realizar, fecha, hora y tipo de simulacro.",
@@ -597,7 +597,7 @@ object DataProvider {
                 incidentCopy = "Simulacro en [DIRECCIÓN]. Información registrada.",
                 imageResource = "ic_drill"
             ),
-            TypificationCode(
+         /*   TypificationCode(
                 code = "106",
                 acronym = "AHOGAM",
                 description = "Ahogamiento",

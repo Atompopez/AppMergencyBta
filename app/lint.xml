@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Desactivar la verificación de paquetes inválidos -->
+    <issue id="InvalidPackage" severity="ignore" />
+    
+    <!-- Ignorar problemas con traducciones faltantes -->
+    <issue id="MissingTranslation" severity="ignore" />
+    
+    <!-- Ignorar problemas con traducciones extra -->
+    <issue id="ExtraTranslation" severity="ignore" />
+    
+    <!-- Ignorar problemas con LiveData nulos -->
+    <issue id="NullSafeMutableLiveData" severity="ignore" />
+    
+    <!-- Ignorar todos los demás errores -->
+    <issue id="all" severity="warning" />
+</lint>

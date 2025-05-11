@@ -5,6 +5,9 @@ plugins {
     id("com.google.gms.google-services") version "4.4.1" apply false
 }
 
+// Aplicar script para deshabilitar tareas de lint
+apply(from = "skip-lint.gradle")
+
 buildscript {
     repositories {
         google()

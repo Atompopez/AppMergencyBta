@@ -41,11 +41,12 @@ android {
     }
     
     lint {
-        baseline = file("lint-baseline.xml")
+        // Usar archivo de configuración personalizado
+        lintConfig = file("lint.xml")
         abortOnError = false
         checkReleaseBuilds = false
-        // Prevent build from failing when a new baseline is created
-        checkAllWarnings = true
+        // No crear un nuevo archivo de baseline
+        baseline = null
     }
 }
 

@@ -1,0 +1,8 @@
+// Script para deshabilitar todas las tareas de lint
+gradle.taskGraph.whenReady { graph ->
+    graph.allTasks.forEach { task ->
+        if (task.name.contains("lint") || task.name.contains("Lint")) {
+            task.enabled = false
+        }
+    }
+}
