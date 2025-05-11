@@ -597,7 +597,7 @@ object DataProvider {
                 incidentCopy = "Simulacro en [DIRECCIÓN]. Información registrada.",
                 imageResource = "ic_drill"
             ),
-         /*   TypificationCode(
+            TypificationCode(
                 code = "106",
                 acronym = "AHOGAM",
                 description = "Ahogamiento",
@@ -1122,8 +1122,6 @@ object DataProvider {
                 incidentCopy = "Incendio reportado en [DIRECCIÓN]. Se requiere intervención de bomberos.",
                 imageResource = "ic_fire"
             ),
-           
-            ),
             TypificationCode(
                 code = "905",
                 acronym = "HURTO",
@@ -1135,8 +1133,6 @@ object DataProvider {
                 incidentCopy = "Hurto reportado en [DIRECCIÓN]. Se requiere presencia policial.",
                 imageResource = "ic_theft"
             ),
-          
-         
           
         )
     }
