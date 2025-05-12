@@ -63,7 +63,7 @@ dependencies {
     implementation(libs.androidx.annotation)
     // Firebase BOM (removed duplicate)
     // Gson para manejar JSON
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.code.gson:gson:2.13.1")
     
     // RecyclerView
     implementation("androidx.recyclerview:recyclerview:1.3.2")
