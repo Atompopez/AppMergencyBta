@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "123456789012",
+    "project_number": "813883315131",
     "project_id": "appmergencybta",
-    "storage_bucket": "appmergencybta.appspot.com"
+    "storage_bucket": "appmergencybta.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:123456789012:android:1234567890abcdef",
+        "mobilesdk_app_id": "1:813883315131:android:394ba878c2c53f910faa9e",
         "android_client_info": {
           "package_name": "com.example.appmergencybta"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "your-api-key-here"
+          "current_key": "AIzaSyCZz_a7Rx_ZKGB3H5i6f4Mwd4XA7hLI2i8"
         }
       ],
       "services": {
