@@ -66,16 +66,16 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
     
     // RecyclerView
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
     
     // CardView
     implementation("androidx.cardview:cardview:1.0.0")
     
     // Room Database
-    implementation("androidx.room:room-runtime:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:2.7.1")
+    annotationProcessor("androidx.room:room-compiler:2.7.1")
+    implementation("androidx.room:room-ktx:2.7.1")
+    kapt("androidx.room:room-compiler:2.7.1")
     
     // Glide para cargar imágenes
     implementation("com.github.bumptech.glide:glide:4.16.0")
